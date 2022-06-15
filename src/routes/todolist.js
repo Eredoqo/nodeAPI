@@ -113,7 +113,7 @@ const todoRoute = (fastify, options, done)=>{
 
     fastify.delete('/:id', deleteItemsOpts, (req, reply)=>{
         const {id} = req.params
-        const todolist1 = todos.filter((todolist1)=>item.id !== id)
+        const todolist1 = todos.filter((todolist1)=>todolist1.id !== id)
         reply.send(`Todo ${id} got deleted`)
     })
 
