@@ -1,0 +1,33 @@
+### Get Route todos
+
+Get http://127.0.0.1:3000 HTTP/1.1
+
+
+### Get ID todos
+Get http://127.0.0.1:3000/1 HTTP/1.1
+
+
+### Post Route todos
+
+POST http://127.0.0.1:3000 HTTP/1.1
+Content-Type: "application/json"
+
+{
+    "name": "Me",
+    "description": "New todo list number 4"
+}
+
+### Update Route todos
+PUT  http://127.0.0.1:3000/2 HTTP/1.1
+Content-Type: "application/json"
+
+{
+    "name": "New name 5",
+    "description": "New todo list number 4"
+}
+
+### Delete Route todos
+
+DELETE http://127.0.0.1:3000/2 HTTP/1.1
+
+
