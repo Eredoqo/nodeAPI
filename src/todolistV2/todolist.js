@@ -33,7 +33,7 @@ const updatedTodo = (request, reply) => {
 const deleteTodo = (request, reply) => {
   const { id } = request.params;
   todos = todos.filter((todo) => todo.id !== id);
-  reply.send(`Item with ${id} got deleted!`);
+  reply.send(`Item with id: ${id} got deleted!`);
 };
 
 module.exports = {
