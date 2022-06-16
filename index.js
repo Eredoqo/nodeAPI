@@ -8,11 +8,28 @@ const app = build(
     {
         info:{title:"Fastify API", version: "1.0.0"}
     
-    }})
+    }},
+    {
+        connectionString: "postgres://postgres:postgres@localhost:5432/postgres",
+      });
 
-app.listen(3000, function(err, address){
-    if(err){
-        app.log.error(err)
-        process.exit(1)
-    }
-})
+
+      app.get("/time", function (request, reply) {
+        app.pg.connect(onConnect);
+      
+        function onConnect(error, client, release) {
+          if (error) return reply.send(error);
+      
+          client.query("SELECT now()", function onResult(error, result) {
+            release();
+            reply.send(error || result.rows[0]);
+          });
+        }
+      });
+
+        app.listen(3000, function(err, address){
+            if(err){
+                app.log.error(err)
+                process.exit(1)
+            }
+        })
