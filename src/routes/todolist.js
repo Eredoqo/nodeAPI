@@ -4,7 +4,7 @@ const {
     postTodo,
     updatedTodo,
     deleteTodo,
-  } = require("../controllers/todolist");
+  } = require("../todolistV2/todolist");
   
   const Todo = {
     type: "object",
