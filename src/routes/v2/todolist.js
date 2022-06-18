@@ -165,7 +165,7 @@ const todoRoute_v2 = async (fastify, options, done) => {
     }
   });
 
-  fastify.delete("/:id", async (request, reply) => {
+  fastify.delete("/:id",deleteTodoOpts, async (request, reply) => {
     try {
       const { id } = request.params;
       await fastify.pg.query("DELETE FROM todos WHERE id=$1", [id]);
